@@ -1,0 +1,38 @@
+.signup{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 30px;
+    width: fit-content;
+}
+
+.signup-box input{
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.signup-box div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signup-box button{
+    width: 50%;
+    align-self: center;
+    padding: 8px 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
