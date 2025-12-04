@@ -1,0 +1,20 @@
+.todos-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 350px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: columnn;
+}

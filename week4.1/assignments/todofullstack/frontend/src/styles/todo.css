@@ -1,0 +1,30 @@
+.todo-div{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+    background-color: rgb(198, 198, 198);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.todo-div div{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.todo-div input, .todo-div textarea{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+button{
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

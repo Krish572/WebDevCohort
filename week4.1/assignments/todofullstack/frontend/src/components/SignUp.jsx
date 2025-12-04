@@ -22,14 +22,15 @@ export function SignUp(){
     }
 
     async function handleSignup(){
-        const response = await axios.post("http://localhost:3000/signup", userInfo);
-        if(response.status != 201){
-            console.log(response.data);
-            return;
+        try{
+            const response = await axios.post("http://localhost:3000/signup", userInfo);
+            const {data} = response;
+            alert(data.message + ", you can Signin now")
+            navigate("/signin");
+        }catch(err){
+            console.log(err.response.data);
+            alert(err.response.data);
         }
-        const {data} = response;
-        alert(data.message + ", you can Signin now")
-        navigate("/signin");
     }
 
 
