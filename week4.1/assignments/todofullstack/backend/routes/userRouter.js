@@ -9,8 +9,12 @@ router.post("/signup",async function(req, res) {
     const {email, username, password} = req.body;
     const parsedData = userSignUpSchema.safeParse(req.body);
     if(!parsedData.success){
-        const error = (JSON.parse(parsedData.error.message)).map(er => er.message);
-        return res.status(401).json({error});
+        // const error = parsedData.error.message
+        const errors = parsedData.error.issues.map(err => ({
+            field: err.path.join("."),
+            message: err.message
+        }));
+        return res.status(401).json({errors});
     }
     const hashedPassword = await bcrypt.hash(password, 5);
     try{
