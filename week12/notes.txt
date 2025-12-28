@@ -1,3 +1,14 @@
 Css makes life easy when you want to code Resposive websites
 when you want certain css property to work of desktop screens and tablet screens then you can you class md:text:5xl text:2xl => What it actually does is when screen size less than md (720px) then size of text will be 2xl remaining time text will be 5xl(md, lg, >> lg);
 Make ur website interactive. when audience hovering towards the buttons or divs make them interactive. if you have div, inside of it lot of content with the product to sell. Now when you want product to highlight here, then when they hover over that div try to move that product up and down. make the parent div as "group" and make the product img as "group-hover:-translate-y-1 transition-all duration-300".
+
+Sample Side-bar
+<div className="flex h-screen relative">
+            <div className="transition-all duration-1000 bg-red-300 w-64 absolute h-full -translate-x-64 md:-translate-x-0 md:relative">
+                Sidebar
+            </div>
+            <div className="bg-blue-300 flex-1">
+                Context
+            </div>
+        </div>
+Small description about translate property: When you are translating x or y of element then it will be moving to that position but the original position will still sustain, it will not be given to any other dom elements. That's the exact reason the above code behaves like it does (While harkirat doing it, he also faces same error but he skips it)

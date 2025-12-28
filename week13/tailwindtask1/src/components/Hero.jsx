@@ -1,24 +1,27 @@
-import { Sidebar } from "./Sidebar";
-import { useContext } from "react";
-import { emailContext } from "./context";
+
 
 export function Hero(){
 
-    const {email, birthYear} = useContext(emailContext);
     return (
-        <div className="flex flex-row">
-            <Sidebar/>
-            <div className="flex flex-col w-full">
-                <div className="w-full h-32 bg-gray-200 relative z-0"></div>
-                <div className="flex px-10 relative z-20">
-                    <div className="px-5 py-12 -mt-10 relative z-50 shadow-lg w-60 flex flex-col items-center rounded-xl gap-2">
-                        <img className="w-25 h-25 rounded-xl" src="https://i.pinimg.com/1200x/1b/37/6e/1b376efd334574683266abf4b8951234.jpg" alt="hi"/>
-                        <span className="font-bold text-xl">Sushant</span>
-                        <span className="text-gray-500">{email || "Default@gmail.com"}</span>
-                        <span className="text-gray-500">{birthYear || "01 Jan 2000"}</span>
-                        <span className="text-gray-500">Delhi, India</span>
-                    </div>   
-                </div>    
+        <div className="flex h-screen dark:bg-black relative">
+
+            <div className="flex flex-col transition-all duration-1000 w-0 md:w-64 bg-white dark:bg-gray-800 text-black dark:text-white">
+                <span>Sidebar</span>
+
+                <button
+                    onClick={() => {
+                        document.documentElement.dataset.theme =
+                        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+                        console.log(document.documentElement);
+                    }}
+                    className="cursor-pointer bg-gray-200 dark:bg-gray-700"
+                >
+                    Toggle DarkMode
+                </button>
+            </div>
+
+            <div className="flex-1 text-black bg-testColor dark:text-white">
+                Context
             </div>
         </div>
     )
